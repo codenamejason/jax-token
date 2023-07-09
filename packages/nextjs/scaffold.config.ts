@@ -9,9 +9,41 @@ export type ScaffoldConfig = {
   walletAutoConnect: boolean;
 };
 
+const sepoliaPgn: chains.Chain = {
+  name: "Public Goods Network Sepolia",
+  network: "sepoliaPgn",
+  id: 58008,
+  nativeCurrency: {
+    name: "gETH",
+    symbol: "gETH",
+    decimals: 18,
+  },
+  rpcUrls: {
+    default: {
+      http: ["https://sepolia.publicgoods.network"],
+      webSocket: undefined,
+    },
+    public: {
+      http: ["https://sepolia.publicgoods.network"],
+      webSocket: undefined,
+    },
+  },
+  blockExplorers: {
+    default: {
+      name: "Public Goods Network Sepolia",
+      url: "https://explorer.sepolia.publicgoods.network/",
+    },
+    public: {
+      name: "Public Goods Network Sepolia",
+      url: "https://explorer.sepolia.publicgoods.network/",
+    },
+  },
+  testnet: true,
+};
+
 const scaffoldConfig = {
   // The network where your DApp lives in
-  targetNetwork: chains.hardhat,
+  targetNetwork: sepoliaPgn,
 
   // The interval at which your front-end polls the RPC servers for new data
   // it has no effect on the local network
